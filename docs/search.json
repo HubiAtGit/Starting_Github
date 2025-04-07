@@ -1,12 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Classmates",
-    "section": "",
-    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nInvalid Date\n\n\nHubiAtGit\n\n\nHubert Bächli\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "Classmates/HubiAtGit.html",
     "href": "Classmates/HubiAtGit.html",
     "title": "HubiAtGit",
@@ -19,5 +12,12 @@
     "title": "HubiAtGit",
     "section": "",
     "text": "here()\n\n[1] \"C:/Hubi/03_UZH/TutorJob/Starting_Github\""
+  },
+  {
+    "objectID": "Classmates.html",
+    "href": "Classmates.html",
+    "title": "Classmates",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nInvalid Date\n\n\nHubiAtGit\n\n\nHubert Bächli\n\n\n\n\n\nNo matching items"
   }
 ]

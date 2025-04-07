@@ -1,6 +1,3 @@
 ---
-title: Classmates
-listing:
-  contents: Classmates
-  type: table
+title: Apout
 ---
