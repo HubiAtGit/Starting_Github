@@ -1,7 +1,6 @@
 project:
   type: website
   output-dir: docs
-  resources: resources/cheatsheets/*
 
 website:
   title: Starting Github"
@@ -9,7 +8,7 @@ website:
   page-navigation: true
   navbar:
     left:
-      - href: Classmates.qmd
+      - href: index.qmd
         text: Classmates
 
 format: 
