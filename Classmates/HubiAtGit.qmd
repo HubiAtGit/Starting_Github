@@ -1,7 +1,7 @@
 ---
-title: "Git-Account"
-author: "Name"
-date: ""
+title: "HubiAtGit"
+author: "Hubert Bächli"
+date: "07-04-2025"
 output: html_document
 ---
 
@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(here)
 ```
 
-## Your local clone is here
+## Your clone is here
 
 ```{r}
 here()
