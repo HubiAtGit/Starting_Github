@@ -1,15 +1,15 @@
 [
   {
-    "objectID": "Classmates/HubiAtGit.html",
-    "href": "Classmates/HubiAtGit.html",
-    "title": "HubiAtGit",
+    "objectID": "template.html",
+    "href": "template.html",
+    "title": "git-account",
     "section": "",
     "text": "here()\n\n[1] \"C:/Hubi/03_UZH/TutorJob/Starting_Github\""
   },
   {
-    "objectID": "Classmates/HubiAtGit.html#your-clone-is-here",
-    "href": "Classmates/HubiAtGit.html#your-clone-is-here",
-    "title": "HubiAtGit",
+    "objectID": "template.html#your-clone-is-here",
+    "href": "template.html#your-clone-is-here",
+    "title": "git-account",
     "section": "",
     "text": "here()\n\n[1] \"C:/Hubi/03_UZH/TutorJob/Starting_Github\""
   },
@@ -18,6 +18,20 @@
     "href": "Classmates.html",
     "title": "Classmates",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nInvalid Date\n\n\nHubiAtGit\n\n\nHubert Bächli\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nInvalid Date\n\n\nGit-Account\n\n\nName \n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "Classmates/template.html",
+    "href": "Classmates/template.html",
+    "title": "Git-Account",
+    "section": "",
+    "text": "here()\n\n[1] \"C:/Hubi/03_UZH/TutorJob/Starting_Github\""
+  },
+  {
+    "objectID": "Classmates/template.html#your-local-clone-is-here",
+    "href": "Classmates/template.html#your-local-clone-is-here",
+    "title": "Git-Account",
+    "section": "",
+    "text": "here()\n\n[1] \"C:/Hubi/03_UZH/TutorJob/Starting_Github\""
   }
 ]
