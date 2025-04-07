@@ -1,17 +1,10 @@
 [
   {
-    "objectID": "template.html",
-    "href": "template.html",
-    "title": "git-account",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Classmates",
     "section": "",
-    "text": "here()\n\n[1] \"C:/Hubi/03_UZH/TutorJob/Starting_Github\""
-  },
-  {
-    "objectID": "template.html#your-clone-is-here",
-    "href": "template.html#your-clone-is-here",
-    "title": "git-account",
-    "section": "",
-    "text": "here()\n\n[1] \"C:/Hubi/03_UZH/TutorJob/Starting_Github\""
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nInvalid Date\n\n\nHubiAtGit\n\n\nHubert Bächli\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "Classmates/HubiAtGit.html",
@@ -26,40 +19,5 @@
     "title": "HubiAtGit",
     "section": "",
     "text": "here()\n\n[1] \"C:/Hubi/03_UZH/TutorJob/Starting_Github\""
-  },
-  {
-    "objectID": "Classmates/Hubi.html",
-    "href": "Classmates/Hubi.html",
-    "title": "HubiAtGit",
-    "section": "",
-    "text": "In contrast to the simple method described below, the first exercise should calculates our own PI.\n\npi\n\n[1] 3.141593\n\n\nThe following is a step-by-step guide to putting the first programming skills from the lesson into practice."
-  },
-  {
-    "objectID": "Classmates/Hubi.html#programming-exercise",
-    "href": "Classmates/Hubi.html#programming-exercise",
-    "title": "HubiAtGit",
-    "section": "",
-    "text": "In contrast to the simple method described below, the first exercise should calculates our own PI.\n\npi\n\n[1] 3.141593\n\n\nThe following is a step-by-step guide to putting the first programming skills from the lesson into practice."
-  },
-  {
-    "objectID": "Classmates/Hubi.html#basic-idea",
-    "href": "Classmates/Hubi.html#basic-idea",
-    "title": "HubiAtGit",
-    "section": "Basic idea",
-    "text": "Basic idea\nAs Ven showed in the first lesson…\n… if we throw thousands of random placed darts into a square field, the number of darts that fall into the enclosed circle should represent the area of that circle in relation to the area of the square.\nIn the following we will try to confirm this with our own programming skills.\n\n1. Step\nGeneration of a random position for a single dart within a square. The square extends from -1 to +1 in the X-direction, as well as in the Y-direction.\nUse a random number generator for a uniform distribution and save the result in the two variables x and y (GAP are placeholder)\n\nx &lt;- runif(n = GAP, min = GAP, max = GAP)\ny &lt;- GAP\n\n\n\n2. Step\nNow calculate the distance from this position to the center. You can use the following simplified formula for our chosen square\n\ndist &lt;- x**2 + y**2\nprint(dist)\n\n[1] 1.041785\n\n\n\n\n3. Step\nCreate a decision rule and print “inside” if the point is inside the circle or “outside” if it is not.\n\nif (dist &lt;= GAP) {\n  GAP\n} else {\n  GAP\n}\n\n\n\n4. Step\nCreate now a loop (use for or while statement) and execute the code from steps 1 to 3 within it. You should get something like that now\nHint: Use may 10 iteration for the beginning\n\n\n[1] \"inside\"\n[1] \"inside\"\n[1] \"inside\"\n[1] \"inside\"\n[1] \"inside\"\n[1] \"inside\"\n[1] \"outside\"\n[1] \"inside\"\n[1] \"inside\"\n[1] \"inside\"\n\n\n\n\n5. Step\nCopy now the code from Step 4 and modify it in a way that instead of outputting a result for each point, it sums up the number of “insides”.\nUse something like that,\n\nn_insides &lt;- 0\nn_insides &lt;- n_insides + 1\nprint(n_insides)\n\n[1] 1\n\n\nor more elegant write the results in a vector.\n\nv_insides &lt;- rep(x = 0, 10)\nv_insides[2] &lt;- 1\nprint(v_insides)\n\n [1] 0 1 0 0 0 0 0 0 0 0\n\n\nIf you use 1000 iteration you should became such a number\n\n\n[1] 782"
-  },
-  {
-    "objectID": "Classmates/Hubi.html#final-step",
-    "href": "Classmates/Hubi.html#final-step",
-    "title": "HubiAtGit",
-    "section": "Final Step",
-    "text": "Final Step\nAs the final step, you now need to calculate PI from your result and compare it with the real one ;-)\n\nprint(selfmade_pi)\n\n[1] 3.128\n\nif (selfmade_pi == pi) {\n  print(\"YOU ARE UNBELIEFABLE\")\n} else {\n  print(\"Try more iterations !!! (or try the function round)\")\n}\n\n[1] \"Try more iterations !!! (or try the function round)\""
-  },
-  {
-    "objectID": "Classmates.html",
-    "href": "Classmates.html",
-    "title": "Classmates",
-    "section": "",
-    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nInvalid Date\n\n\nHubiAtGit\n\n\nHubert Bächli\n\n\n\n\n\nNo matching items"
   }
 ]
