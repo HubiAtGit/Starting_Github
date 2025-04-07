@@ -1,0 +1,6 @@
+---
+title: Classmates
+listing:
+  contents: Classmates
+  type: table
+---
