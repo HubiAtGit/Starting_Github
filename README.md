@@ -6,7 +6,7 @@ If I’ve already added you as a collaborator, you should now see the project ca
 
 ![](images/clipboard-416951328.png)
 
-1.  **Clone** the project to your local computer. <https://github.com/HubiAtGit/Starting_Github.git>
+1.  **Clone** the project to your local c omputer. <https://github.com/HubiAtGit/Starting_Github.git>
 
 2.  Create your **own branch** (for example, named after yourself) and **switch** to that branch.
 
