@@ -6,7 +6,7 @@ If I’ve already added you as a collaborator, you should now see the project ca
 
 ![](images/clipboard-416951328.png)
 
-1.  **Clone** the project to your local computer. (You can do this wit creating a new Project with version control and this link: <https://github.com/HubiAtGit/Starting_Github.git> )
+1.  **Clone** the project to your local computer. ( You can do this wit creating a new Project with version control and this link: <https://github.com/HubiAtGit/Starting_Github.git> )
 
 2.  Create your **own branch** (for example, named after yourself) and **switch** to that branch.
 
@@ -26,7 +26,7 @@ If I’ve already added you as a collaborator, you should now see the project ca
 
 ![](images/clipboard-2142755749.png)
 
-To guide you through this process, you can either follow the tutorial at <https://happygitwithr.com/> — or just play around! Nothing bad will happen 😊
+To guide you through this process, you can either follow the tutorial at <https://happygitwithr.com/> — or just play around! Nothing bad will happen! The Project is more or less empty 😊
 
 **Note:** After cloning the project to your local drive, you can do all the steps (except step 9) directly from within the RStudio window.
 
