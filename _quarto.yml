@@ -1,0 +1,24 @@
+project:
+  type: website
+  output-dir: docs
+  resources: resources/cheatsheets/*
+
+website:
+  title: Starting Github"
+  search: true
+  page-navigation: true
+  navbar:
+    left:
+      - href: Classmates.qmd
+        text: Classmates
+
+format: 
+  html: 
+    toc: true
+    theme: 
+      dark: [cosmo, theme-dark.scss]
+      light: cosmo
+    highlight-style: monokai
+
+execute: 
+  freeze: true
