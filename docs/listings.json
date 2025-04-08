@@ -2,7 +2,8 @@
   {
     "listing": "/Classmates.html",
     "items": [
-      "/Classmates/template.html"
+      "/Classmates/template.html",
+      "/Classmates/HubiAtGit.html"
     ]
   }
 ]
