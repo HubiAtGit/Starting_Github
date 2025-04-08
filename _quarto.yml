@@ -8,6 +8,8 @@ website:
   page-navigation: true
   navbar:
     left:
+      - href: index.qmd
+        text: Readme
       - href: Classmates.qmd
         text: Classmates
 
