@@ -1,7 +1,7 @@
 ---
-title: "R0EBer"
-author: "Roy"
-date: "`r Sys.Date()`"
+title: "Git-Account"
+author: " "
+date: ""
 output: html_document
 ---
 
