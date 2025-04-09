@@ -1,0 +1,15 @@
+{
+  "hash": "0269bdaae59cd95da912ae7f2b38537c",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"chiaraschmi\"\nauthor: \"Chiara Schmidiger\"\ndate: \"04.09.2025\"\noutput: html_document\n---\n\n\n\n\n\n## Your local clone is here\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nhere()\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] \"/Users/chiaraschmidiger/Desktop/R-Studio/Starting_Github\"\n```\n\n\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
