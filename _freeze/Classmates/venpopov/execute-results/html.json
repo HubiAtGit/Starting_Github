@@ -1,0 +1,15 @@
+{
+  "hash": "d53c3bcffa4cdea7b3ff5655a1a41d4d",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Git-Account\"\nauthor: \"Venpopov\"\ndate: \"\"\noutput: html_document\n---\n\n\n\n## Your local clone is here\n\n::: {.cell}\n\n```{.r .cell-code}\nhere()\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] \"/Users/venpopov/Documents/projects/testtesttest\"\n```\n\n\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
