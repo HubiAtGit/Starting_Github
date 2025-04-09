@@ -1,0 +1,17 @@
+---
+title: "chiaraschmi"
+author: "Chiara Schmidiger"
+date: "04.09.2025"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(here)
+```
+
+## Your local clone is here
+
+```{r}
+here()
+```
