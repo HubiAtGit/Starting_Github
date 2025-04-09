@@ -1,0 +1,15 @@
+{
+  "hash": "7006fe9b572f6d636bc42b33b170ae3f",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Git-Account\"\nauthor: \"luis\"\ndate: \"4/9/2025\"\noutput: html_document\n---\n\n\n\n\n\n\n## Your local clone is here\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nhere()\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] \"C:/Users/LuisB217/Documents/R/projects/Starting_Github\"\n```\n\n\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
