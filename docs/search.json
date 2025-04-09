@@ -7,18 +7,18 @@
     "text": "To get familiar with how GitHub works, we believe the best approach is simply to explore and try things out. So, here’s a small list of tasks to help you get started and understand GitHub’s core functionality:\nIf I’ve already added you as a collaborator, you should now see the project called Starting_Github.\n\n\nClone the project to your local computer. ( You can do this with creating a new Project with version control and this link: https://github.com/HubiAtGit/Starting_Github.git )\nCreate your own branch (for example, named after yourself) and switch to that branch.\nOpen the file template.qmd located in the Classmates folder.\nSave this file under the name of your GitHub account.\nChange the header of the file and save it again.\nOpen your terminal and type: quarto preview\nIf everything looks good, stage, commit, and push your changes.\nYour new file should now be on GitHub—but it will only be visible in your branch!\nGo to GitHub and create a pull request to merge your file into the main branch.\n\n\nTo guide you through this process, you can either follow the tutorial at https://happygitwithr.com/ — or just play around! Nothing bad will happen! The Project is more or less empty 😊\nNote: After cloning the project to your local drive, you can do all the steps (except step 9) directly from within the RStudio window."
   },
   {
-    "objectID": "Classmates/template.html",
-    "href": "Classmates/template.html",
-    "title": "R03Ber",
+    "objectID": "Classmates/Roy.html",
+    "href": "Classmates/Roy.html",
+    "title": "R0EBer",
     "section": "",
-    "text": "here()\n\n[1] \"C:/Users/roy_e/OneDrive/Dokumente/Studium/Master/R Working Directories/Programming and scientific computing/Starting_Github\""
+    "text": "here()\n\n[1] \"C:/Hubi/03_UZH/TutorJob/Starting_Github\""
   },
   {
-    "objectID": "Classmates/template.html#your-local-clone-is-here",
-    "href": "Classmates/template.html#your-local-clone-is-here",
-    "title": "R03Ber",
+    "objectID": "Classmates/Roy.html#your-local-clone-is-here",
+    "href": "Classmates/Roy.html#your-local-clone-is-here",
+    "title": "R0EBer",
     "section": "",
-    "text": "here()\n\n[1] \"C:/Users/roy_e/OneDrive/Dokumente/Studium/Master/R Working Directories/Programming and scientific computing/Starting_Github\""
+    "text": "here()\n\n[1] \"C:/Hubi/03_UZH/TutorJob/Starting_Github\""
   },
   {
     "objectID": "Classmates/HubiAtGit.html",
@@ -35,13 +35,6 @@
     "text": "here()\n\n[1] \"C:/Hubi/03_UZH/TutorJob/Starting_Github\""
   },
   {
-    "objectID": "Classmates.html",
-    "href": "Classmates.html",
-    "title": "Classmates",
-    "section": "",
-    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\n \n\n\nGit-Account\n\n\nName \n\n\n\n\nApr 8, 2025\n\n\nHubiAtGit\n\n\nHubert Bächli\n\n\n\n\nApr 9, 2025\n\n\nchiaraschmi\n\n\nChiara Schmidiger\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "Classmates/chiaraschmidiger.html",
     "href": "Classmates/chiaraschmidiger.html",
     "title": "chiaraschmi",
@@ -54,5 +47,26 @@
     "title": "chiaraschmi",
     "section": "",
     "text": "here()\n\n[1] \"/Users/chiaraschmidiger/Desktop/R-Studio/Starting_Github\""
+  },
+  {
+    "objectID": "Classmates/luisstephanus.html",
+    "href": "Classmates/luisstephanus.html",
+    "title": "Git-Account",
+    "section": "",
+    "text": "here()\n\n[1] \"C:/Users/LuisB217/Documents/R/projects/Starting_Github\""
+  },
+  {
+    "objectID": "Classmates/luisstephanus.html#your-local-clone-is-here",
+    "href": "Classmates/luisstephanus.html#your-local-clone-is-here",
+    "title": "Git-Account",
+    "section": "",
+    "text": "here()\n\n[1] \"C:/Users/LuisB217/Documents/R/projects/Starting_Github\""
+  },
+  {
+    "objectID": "Classmates.html",
+    "href": "Classmates.html",
+    "title": "Classmates",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nApr 9, 2025\n\n\nGit-Account\n\n\nluis \n\n\n\n\nApr 8, 2025\n\n\nHubiAtGit\n\n\nHubert Bächli\n\n\n\n\nInvalid Date\n\n\nR0EBer\n\n\nRoy \n\n\n\n\nApr 9, 2025\n\n\nchiaraschmi\n\n\nChiara Schmidiger\n\n\n\n\n\nNo matching items"
   }
 ]

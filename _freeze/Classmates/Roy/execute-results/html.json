@@ -1,0 +1,15 @@
+{
+  "hash": "2d63bb1071484ba9914ae84cf088f4de",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"R0EBer\"\nauthor: \"Roy\"\ndate: \"2025-04-09\"\noutput: html_document\n---\n\n\n\n\n\n## Your local clone is here\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nhere()\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] \"C:/Hubi/03_UZH/TutorJob/Starting_Github\"\n```\n\n\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
