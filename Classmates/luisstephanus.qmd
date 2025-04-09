@@ -1,0 +1,17 @@
+---
+title: "Git-Account"
+author: "luis"
+date: "4/9/2025"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(here)
+```
+
+## Your local clone is here
+
+```{r}
+here()
+```
