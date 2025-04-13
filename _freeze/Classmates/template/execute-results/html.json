@@ -1,8 +1,8 @@
 {
-  "hash": "67fa58d3798306d1cc8d52fb9283725f",
+  "hash": "eed894067093e737aa2c3635a9b065b7",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"R03Ber\"\nauthor: \"Roy\"\ndate: \"2025-04-09\"\noutput: html_document\n---\n\n\n\n\n\n## Your local clone is here\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nhere()\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] \"C:/Users/roy_e/OneDrive/Dokumente/Studium/Master/R Working Directories/Programming and scientific computing/Starting_Github\"\n```\n\n\n:::\n:::\n",
+    "markdown": "---\ntitle: \"Git-Account\"\nauthor: \" \"\ndate: \"\"\noutput: html_document\n---\n\n\n\n\n\n\n## Your local clone is here\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nhere()\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] \"C:/Hubi/03_UZH/TutorJob/Starting_Github\"\n```\n\n\n:::\n:::\n",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"
