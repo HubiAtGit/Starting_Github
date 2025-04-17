@@ -12,6 +12,8 @@ website:
         text: Readme
       - href: Classmates.qmd
         text: Classmates
+      - href: LOGO.qmd
+        text: LOGO-Versions
 
 format: 
   html: 

@@ -1,5 +1,11 @@
 [
   {
+    "listing": "/LOGO.html",
+    "items": [
+      "/LOGO/Hubi_Logo_V3.14.html"
+    ]
+  },
+  {
     "listing": "/Classmates.html",
     "items": [
       "/Classmates/template.html",
