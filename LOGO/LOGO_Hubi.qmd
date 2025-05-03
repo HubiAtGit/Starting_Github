@@ -44,8 +44,8 @@ Don't show the turtle cursor.
 
 ```{r}
 HIDETURTLE <- function () {
-  LOGO$data$turtle <- FALSE
-  record_path(turtle = LOGO$data$turtle)
+  LOGO$turtle <- FALSE
+  record_path(turtle = LOGO$turtle)
 }
 ```
 
@@ -61,8 +61,8 @@ Show the turtle cursor.
 
 ```{r}
 SHOWTURTLE <- function () {
-  LOGO$data$turtle <- TRUE
-  record_path(turtle = LOGO$data$turtle)
+  LOGO$turtle <- TRUE
+  record_path(turtle = LOGO$turtle)
 }
 ```
 
@@ -78,9 +78,9 @@ Move forward *steps*.
 
 ```{r}
 FORWARD <- function (step) {
-  angle <- LOGO$data$path$rad[LOGO$data$pos] 
-  x0 <- LOGO$data$path$x[LOGO$data$pos]
-  y0 <- LOGO$data$path$y[LOGO$data$pos]
+  angle <- LOGO$path$rad[LOGO$pos] 
+  x0 <- LOGO$path$x[LOGO$pos]
+  y0 <- LOGO$path$y[LOGO$pos]
   
   max_step <- 1
   n_step <- abs(step)%/%(max_step * 1.5) + 1
@@ -92,7 +92,7 @@ FORWARD <- function (step) {
   x1 <- x0 + cos(angle) * steps
   y1 <- y0 + sin(angle) * steps
   
-  record_path(x = x1, y = y1, path_color = LOGO$data$path_color)
+  record_path(x = x1, y = y1, path_color = LOGO$path_color)
 }
 ```
 
@@ -124,9 +124,9 @@ Turn left this many degrees. Negative degrees work too, they'll turn it right.
 
 ```{r}
 LEFT <- function (degs) {
-  LOGO$data$heading <- LOGO$data$heading + degs
-  LOGO$data$heading <- LOGO$data$heading %% 360
-  record_path(rad = LOGO$data$heading * pi / 180)
+  LOGO$heading <- LOGO$heading + degs
+  LOGO$heading <- LOGO$heading %% 360
+  record_path(rad = LOGO$heading * pi / 180)
 }
 ```
 
@@ -158,8 +158,8 @@ Turn to an absolute heading of *degrees*.
 
 ```{r}
 SETHEADING <- function (deg) {
-  LOGO$data$heading <- deg
-  record_path(rad = LOGO$data$heading * pi / 180)
+  LOGO$heading <- deg
+  record_path(rad = LOGO$heading * pi / 180)
 }
 ```
 
@@ -201,7 +201,7 @@ Set the horizontal position to *x*.
 
 ```{r}
 SETPOSX <- function (x1) {
-  SETPOS(x1, y1 = LOGO$data$path$y[LOGO$data$pos])
+  SETPOS(x1, y1 = LOGO$path$y[LOGO$pos])
 }
 ```
 
@@ -217,7 +217,7 @@ Set the vertical position to *y*.
 
 ```{r}
 SETPOSY <- function (y1) {
-  SETPOS(x1 = LOGO$data$path$x[LOGO$data$pos], y1)
+  SETPOS(x1 = LOGO$path$x[LOGO$pos], y1)
 }
 ```
 
@@ -233,8 +233,8 @@ SPY <- function (y1) {
 
 ```{r}
 SETPATHCOLOR <- function (path_color) {
-  LOGO$data$path_color <- path_color
-  record_path(path_color = LOGO$data$path_color)
+  LOGO$path_color <- path_color
+  record_path(path_color = LOGO$path_color)
 }
 ```
 
@@ -248,8 +248,8 @@ SPC <- function (path_color) {
 
 ```{r}
 SETTURTLECOLOR <- function (turtle_color) {
-  LOGO$data$turtle_color <- turtle_color
-  record_path(turtle_color = LOGO$data$turtle_color)
+  LOGO$turtle_color <- turtle_color
+  record_path(turtle_color = LOGO$turtle_color)
 }
 ```
 
@@ -263,8 +263,8 @@ STC <- function (turtle_color) {
 
 ```{r}
 SETNEWCHUNK <- function () {
-  LOGO$data$chunk <- LOGO$data$chunk + 1
-  record_path(chunk = LOGO$data$chunk)
+  LOGO$chunk <- LOGO$chunk + 1
+  record_path(chunk = LOGO$chunk)
 }
 ```
 
@@ -278,27 +278,27 @@ SNC <- function () {
 
 ```{r}
 UNDOCHUNK <- function () {
-  last_chunk <- max(LOGO$data$path$chunk)
+  last_chunk <- max(LOGO$path$chunk)
   if (last_chunk > 1) {
-    LOGO$data$path <- LOGO$data$path[LOGO$data$path$chunk != last_chunk,]
+    LOGO$path <- LOGO$path[LOGO$path$chunk != last_chunk,]
   } else {
     CLEARSCREEN() 
   }
   
-  LOGO$data$chunk <- max(LOGO$data$path$chunk)
-  LOGO$data$pos <- nrow(LOGO$data$path)
-  LOGO$data$heading <- LOGO$data$path$rad[LOGO$data$pos] * 180 / pi 
-  LOGO$data$turtle <- LOGO$data$path$turtle[LOGO$data$pos]
-  LOGO$data$turtle_color <- LOGO$data$path$turtle_color[LOGO$data$pos]
+  LOGO$chunk <- max(LOGO$path$chunk)
+  LOGO$pos <- nrow(LOGO$path)
+  LOGO$heading <- LOGO$path$rad[LOGO$pos] * 180 / pi 
+  LOGO$turtle <- LOGO$path$turtle[LOGO$pos]
+  LOGO$turtle_color <- LOGO$path$turtle_color[LOGO$pos]
   
-  last_pos <- LOGO$data$pos
-  while (LOGO$data$path$path_color[last_pos] == "transparent" && last_pos > 0) {
+  last_pos <- LOGO$pos
+  while (LOGO$path$path_color[last_pos] == "transparent" && last_pos > 0) {
     last_pos <- last_pos - 1
   }
   if (last_pos == 0) {
-    LOGO$data$path_color <- "blue"
+    LOGO$path_color <- "blue"
   } else {
-    LOGO$data$path_color <- LOGO$data$path$path_color[last_pos]
+    LOGO$path_color <- LOGO$path$path_color[last_pos]
   }
   REPLOT()
 }
@@ -316,7 +316,7 @@ UNDO <- function () {
 SETSPEED <- function (speed) {
   speed <- pmax(speed, 1)
   speed <- round(speed)
-  LOGO$data$speed <- speed
+  LOGO$speed <- speed
 }
 ```
 
@@ -647,19 +647,17 @@ new_field <- function (size) {
     stringsAsFactors = FALSE
   )
   
-  LOGO$data <- list(
-    field_name = "LOGO",
-    field_dir = here(),
-    size = abs(size),
-    chunk = chunk,
-    pos = pos,
-    heading = heading,
-    turtle = turtle,
-    turtle_color = turtle_color,
-    path_color = path_color,
-    speed = speed,
-    path = path
-  )
+  LOGO$field_name = "LOGO"
+  LOGO$field_dir = here()
+  LOGO$size = abs(size)
+  LOGO$chunk = chunk
+  LOGO$pos = pos
+  LOGO$heading = heading
+  LOGO$turtle = turtle
+  LOGO$turtle_color = turtle_color
+  LOGO$path_color = path_color
+  LOGO$speed = speed
+  LOGO$path = path
 }
 ```
 
@@ -674,10 +672,10 @@ new_field <- function (size) {
                           turtle = NULL,
                           turtle_color = NULL) {
    
-   temp <- LOGO$data$pos
+   temp <- LOGO$pos
    n <- max(lengths(list(chunk, x, y, rad, path_color, turtle, turtle_color)))
    
-   template <- LOGO$data$path[temp, ]
+   template <- LOGO$path[temp, ]
    newrows <- template[rep(1, n), ]
    
    if (!is.null(chunk)) newrows$chunk <- chunk
@@ -688,9 +686,9 @@ new_field <- function (size) {
    if (!is.null(turtle)) newrows$turtle <- turtle
    if (!is.null(turtle_color)) newrows$turtle_color <- turtle_color
    
-   LOGO$data$path <- rbind(LOGO$data$path, newrows)
-   rownames(LOGO$data$path) <- NULL
-   LOGO$data$pos <- nrow(LOGO$data$path)
+   LOGO$path <- rbind(LOGO$path, newrows)
+   rownames(LOGO$path) <- NULL
+   LOGO$pos <- nrow(LOGO$path)
 }
 ```
 
@@ -700,14 +698,14 @@ new_field <- function (size) {
 
 ```{r}
 plot_field <- function (stat) {
-  maxpath <- ceiling(max(abs(LOGO$data$path[1:stat,c("x","y")])) * 1.11)
-  LOGO$data$size <- max(c(LOGO$data$size, maxpath), na.rm = TRUE)
+  maxpath <- ceiling(max(abs(LOGO$path[1:stat,c("x","y")])) * 1.11)
+  LOGO$size <- max(c(LOGO$size, maxpath), na.rm = TRUE)
 
   par(mar = c(0, 0, 0, 0),
       xaxs = "i", yaxs = "i")
   plot.new()
-  plot.window(xlim = c(-LOGO$data$size, LOGO$data$size),
-              ylim = c(-LOGO$data$size, LOGO$data$size),
+  plot.window(xlim = c(-LOGO$size, LOGO$size),
+              ylim = c(-LOGO$size, LOGO$size),
               asp = 1)
   box()
 }
@@ -719,9 +717,9 @@ plot_field <- function (stat) {
 plot_path <- function (stat) {
   if (stat > 1) {
      for (i in 2:stat) {
-       segments(x0 = LOGO$data$path$x[i-1], y0 = LOGO$data$path$y[i-1],
-                x1 = LOGO$data$path$x[i], y1 = LOGO$data$path$y[i],
-                col = LOGO$data$path$path_color[i], lwd = 2)
+       segments(x0 = LOGO$path$x[i-1], y0 = LOGO$path$y[i-1],
+                x1 = LOGO$path$x[i], y1 = LOGO$path$y[i],
+                col = LOGO$path$path_color[i], lwd = 2)
      }
   }
 }
@@ -731,22 +729,22 @@ plot_path <- function (stat) {
 
 ```{r}
 plot_turtle <- function (stat) {
-  show <-  LOGO$data$path$turtle[stat]
+  show <-  LOGO$path$turtle[stat]
   if (show) {
-    symbols(x = LOGO$data$path$x[stat],
-        y = LOGO$data$path$y[stat],
-        circles = 0.02 * LOGO$data$size,
+    symbols(x = LOGO$path$x[stat],
+        y = LOGO$path$y[stat],
+        circles = 0.02 * LOGO$size,
         inches = FALSE,
         fg = NA,
-        bg = LOGO$data$path$turtle_color[stat],
+        bg = LOGO$path$turtle_color[stat],
         add = TRUE)
-    arrow_length <- 0.1 * LOGO$data$size
-    angle <- LOGO$data$path$rad[stat]
-    arrows(LOGO$data$path$x[stat],
-           LOGO$data$path$y[stat],
-           LOGO$data$path$x[stat] + cos(angle) * arrow_length,
-           LOGO$data$path$y[stat] + sin(angle) * arrow_length,
-           col = LOGO$data$path$turtle_color[stat],
+    arrow_length <- 0.1 * LOGO$size
+    angle <- LOGO$path$rad[stat]
+    arrows(LOGO$path$x[stat],
+           LOGO$path$y[stat],
+           LOGO$path$x[stat] + cos(angle) * arrow_length,
+           LOGO$path$y[stat] + sin(angle) * arrow_length,
+           col = LOGO$path$turtle_color[stat],
            code = 2,
            length = 0.1,
            angle = 20,
@@ -759,7 +757,7 @@ plot_turtle <- function (stat) {
 
 ```{r}
 plot_stat <- function (stat = NULL) {
-  if(is.null(stat)) stat <- nrow(LOGO$data$path)
+  if(is.null(stat)) stat <- nrow(LOGO$path)
   
   tmpfile <- tempfile(fileext = ".png")
   png(filename = tmpfile, width = 600, height = 600, res = 150)
@@ -785,15 +783,15 @@ PLOT <- function (chunk = TRUE) {
   invisible(NULL)
   
   if (chunk) {
-    Range <- range(which(LOGO$data$path$chunk == max(LOGO$data$chunk)))
+    Range <- range(which(LOGO$path$chunk == max(LOGO$chunk)))
     rmin <- max(2,Range[1])
     rmax <- Range[2]
     } else {
       rmin <- 2
-      rmax <- nrow(LOGO$data$path)
+      rmax <- nrow(LOGO$path)
     }
   
-  step <- LOGO$data$speed/(rmax-rmin)
+  step <- LOGO$speed/(rmax-rmin)
   step <- pmin(pmax(step, 1/200), 1)
   Seq0 <- seq(from = 0, to = 1, by = step)
   plot_seq <- qbeta(Seq0, shape1 = 0.15, shape2 = 0.2)
