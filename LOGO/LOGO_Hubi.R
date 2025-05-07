@@ -1,82 +1,50 @@
----
-title: "Logo with Gimmicks"
-author: "Hubert Baechli"
-date: "04-18-2025"
----
-
-```{r setup, include=FALSE}
+## ----setup, include=FALSE------------------------------------------------------------------------------------------------------------
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(magick)
 library(here)
-```
 
-# Logo
 
-**Goal:** Programming a simple language with R
-
-Logo goes back much earlier than the Apple II, it was developed in 1967 by Cynthia Solomon, Wally Feurzig, and Seymour Papert. That's five years before C and 24 years before Python! The three worked at Bolt, Beranek, and Newman (BBN), famous for all kinds of other computing history. BBN built the first Interface Message Processors (early routers) in 1968 for the ARPANET, which would evolve into the modern internet. [...learn more](https://learn.adafruit.com/program-logo-on-an-apple-ii/what-is-logo)
-
-## Basic Commands
-
-Implementing the basic commands [see "Hello Turtle"](https://learn.adafruit.com/program-logo-on-an-apple-ii/hello-turtle)
-
-### CLEARSCREEN (CS)
-
-Clear the screen and initializing the field
-
-```{r}
+## ------------------------------------------------------------------------------------------------------------------------------------
 CLEARSCREEN <- function () {
   rm(list = ls(envir = LOGO), envir = LOGO)
   new_field(5)
 }
-```
 
-```{r}
+
+## ------------------------------------------------------------------------------------------------------------------------------------
 CS <- function () {
   CLEARSCREEN()
 }
-```
 
-### HIDETURTLE (HT)
 
-Don't show the turtle cursor.
-
-```{r}
+## ------------------------------------------------------------------------------------------------------------------------------------
 HIDETURTLE <- function () {
   LOGO$turtle <- FALSE
   record_path(turtle = LOGO$turtle)
 }
-```
 
-```{r}
+
+## ------------------------------------------------------------------------------------------------------------------------------------
 HT <- function () {
   HIDETURTLE()
 }
-```
 
-### SHOWTURTLE (ST)
 
-Show the turtle cursor.
-
-```{r}
+## ------------------------------------------------------------------------------------------------------------------------------------
 SHOWTURTLE <- function () {
   LOGO$turtle <- TRUE
   record_path(turtle = LOGO$turtle)
 }
-```
 
-```{r}
+
+## ------------------------------------------------------------------------------------------------------------------------------------
 ST <- function () {
   SHOWTURTLE()
 }
-```
 
-### FORWARD (FD)
 
-Move forward *steps*.
-
-```{r}
+## ------------------------------------------------------------------------------------------------------------------------------------
 FORWARD <- function (step) {
   angle <- LOGO$path$rad[LOGO$pos] 
   x0 <- LOGO$path$x[LOGO$pos]
@@ -99,189 +67,147 @@ FORWARD <- function (step) {
   
   record_path(x = x1, y = y1, path_color = LOGO$path_color)
 }
-```
 
-```{r}
+
+## ------------------------------------------------------------------------------------------------------------------------------------
 FD <- function (step) {
   FORWARD(step)
 }
-```
 
-### BACK (BK)
 
-Move back *steps*.
-
-```{r}
+## ------------------------------------------------------------------------------------------------------------------------------------
 BACK <- function (steps) {
   FORWARD(-steps)
 }
-```
 
-```{r}
+
+## ------------------------------------------------------------------------------------------------------------------------------------
 BK <- function (steps) {
   BACK(steps)
 }
-```
 
-### LEFT (LT)
 
-Turn left this many degrees. Negative degrees work too, they'll turn it right.
-
-```{r}
+## ------------------------------------------------------------------------------------------------------------------------------------
 LEFT <- function (degs) {
   LOGO$heading <- LOGO$heading + degs
   LOGO$heading <- LOGO$heading %% 360
   record_path(rad = LOGO$heading * pi / 180)
 }
-```
 
-```{r}
+
+## ------------------------------------------------------------------------------------------------------------------------------------
 LT <- function (degs) {
   LEFT(degs)
 }
-```
 
-### RIGHT (RT)
 
-Turn right this many degrees.
-
-```{r}
+## ------------------------------------------------------------------------------------------------------------------------------------
 RIGHT <- function (degs) {
   LEFT(-degs)
 }
-```
 
-```{r}
+
+## ------------------------------------------------------------------------------------------------------------------------------------
 RT <- function (degs) {
   RIGHT(degs)
 }
-```
 
-### SETHEADING (SH)
 
-Turn to an absolute heading of *degrees*.
-
-```{r}
+## ------------------------------------------------------------------------------------------------------------------------------------
 SETHEADING <- function (deg) {
   LOGO$heading <- deg
   record_path(rad = LOGO$heading * pi / 180)
 }
-```
 
-```{r}
+
+## ------------------------------------------------------------------------------------------------------------------------------------
 SH <- function (deg) {
   SETHEADING(deg)
 }
-```
 
-### SETPOS (SP)
 
-Set the position to *x, y* coordinates. These are Cartesian, so 0,0 is the middle of the screen.
-
-```{r}
+## ------------------------------------------------------------------------------------------------------------------------------------
 SETPOS <- function (x1, y1) {
   record_path(x = x1, y = y1, path_color = "transparent")
 }
-```
 
-```{r}
+
+## ------------------------------------------------------------------------------------------------------------------------------------
 SP <- function (x1, y1) {
   SETPOS(x1, y1)
 }
-```
 
-### HOME
 
-Move back to the home position.
-
-```{r}
+## ------------------------------------------------------------------------------------------------------------------------------------
 HOME <- function () {
   SETPOS(x1 = 0, y1 = 0)
 }
-```
 
-### SETPOSX (SPX)
 
-Set the horizontal position to *x*.
-
-```{r}
+## ------------------------------------------------------------------------------------------------------------------------------------
 SETPOSX <- function (x1) {
   SETPOS(x1, y1 = LOGO$path$y[LOGO$pos])
 }
-```
 
-```{r}
+
+## ------------------------------------------------------------------------------------------------------------------------------------
 SPX <- function (x1) {
   SETPOSX(x1)
 }
-```
 
-### SETPOSY (SPY)
 
-Set the vertical position to *y*.
-
-```{r}
+## ------------------------------------------------------------------------------------------------------------------------------------
 SETPOSY <- function (y1) {
   SETPOS(x1 = LOGO$path$x[LOGO$pos], y1)
 }
-```
 
-```{r}
+
+## ------------------------------------------------------------------------------------------------------------------------------------
 SPY <- function (y1) {
   SETPOSY(y1)
 }
-```
 
-## Gimmicks
 
-### SETPATHCOLOR (SPC)
-
-```{r}
+## ------------------------------------------------------------------------------------------------------------------------------------
 SETPATHCOLOR <- function (path_color) {
   LOGO$path_color <- path_color
   record_path(path_color = LOGO$path_color)
 }
-```
 
-```{r}
+
+## ------------------------------------------------------------------------------------------------------------------------------------
 SPC <- function (path_color) {
   SETPATHCOLOR(path_color)
 }
-```
 
-### SETTURTLECOLOR (STC)
 
-```{r}
+## ------------------------------------------------------------------------------------------------------------------------------------
 SETTURTLECOLOR <- function (turtle_color) {
   LOGO$turtle_color <- turtle_color
   record_path(turtle_color = LOGO$turtle_color)
 }
-```
 
-```{r}
+
+## ------------------------------------------------------------------------------------------------------------------------------------
 STC <- function (turtle_color) {
   SETTURTLECOLOR(turtle_color)
 }
-```
 
-### SETNEWCHUNK (SNC)
 
-```{r}
+## ------------------------------------------------------------------------------------------------------------------------------------
 SETNEWCHUNK <- function () {
   LOGO$chunk <- LOGO$chunk + 1
   record_path(chunk = LOGO$chunk)
 }
-```
 
-```{r}
+
+## ------------------------------------------------------------------------------------------------------------------------------------
 SNC <- function () {
   SETNEWCHUNK()
 }
-```
 
-### UNDOCHUNK (UNDO)
 
-```{r}
+## ------------------------------------------------------------------------------------------------------------------------------------
 UNDOCHUNK <- function () {
   last_chunk <- max(LOGO$path$chunk)
   if (last_chunk > 1) {
@@ -307,41 +233,35 @@ UNDOCHUNK <- function () {
   }
   REPLOT()
 }
-```
 
-```{r}
+
+## ------------------------------------------------------------------------------------------------------------------------------------
 UNDO <- function () {
   UNDOCHUNK()
 }
-```
 
-### SETSPEED (SPEED)
 
-```{r}
+## ------------------------------------------------------------------------------------------------------------------------------------
 SETSPEED <- function (speed) {
   speed <- pmax(speed, 1)
   speed <- round(speed)
   LOGO$speed <- speed
 }
-```
 
-```{r}
+
+## ------------------------------------------------------------------------------------------------------------------------------------
 SPEED <- function (speed) {
   SETSPEED(speed)
 }
-```
 
-### REPLOT
 
-```{r}
+## ------------------------------------------------------------------------------------------------------------------------------------
 REPLOT <- function (chunk = FALSE) {
   PLOT(chunk)
 }
-```
 
-### SAVEPATH (SAVE)
 
-```{r}
+## ------------------------------------------------------------------------------------------------------------------------------------
 SAVESCREEN <- function (name) {
   name_gif <- paste0(name, ".gif")
   REPLOT()
@@ -349,35 +269,29 @@ SAVESCREEN <- function (name) {
             to = here("LOGO", name_gif), 
             overwrite = TRUE)
 }
-```
 
-```{r}
+
+## ------------------------------------------------------------------------------------------------------------------------------------
 SAVE <- function (name) {
   SAVESCREEN(name)
 }
-```
 
-### QUITLOGO (QUIT)
 
-```{r}
+## ------------------------------------------------------------------------------------------------------------------------------------
 QUITLOGO <- function () {
   if (exists("LOGO", envir = .GlobalEnv)) {
   rm(LOGO, envir = .GlobalEnv)
 }
 }
-```
 
-```{r}
+
+## ------------------------------------------------------------------------------------------------------------------------------------
 QUIT <- function () {
   QUITLOGO()
 }
-```
 
-## Parsing Prompts
 
-### Clean strings
-
-```{r}
+## ------------------------------------------------------------------------------------------------------------------------------------
 clean_prompt <- function (Prompt) {
   Prompt <- gsub("([^a-zA-Z0-9])", " \\1 ", Prompt)
   Prompt <- gsub("\\s+", " ", Prompt)
@@ -387,11 +301,9 @@ clean_prompt <- function (Prompt) {
   Prompt <- trimws(Prompt)
   Prompt
 }
-```
 
-### Analyzing and splitting Code
 
-```{r}
+## ------------------------------------------------------------------------------------------------------------------------------------
 breakup_String <- function(String) {
   cl_String <- clean_prompt(String)
   split_String <- strsplit(cl_String, " ")[[1]]
@@ -511,17 +423,15 @@ breakup_String <- function(String) {
   }
   return(df[df$ID_Func != 0,])
 }
-```
 
-```{r}
+
+## ------------------------------------------------------------------------------------------------------------------------------------
 CodeLine <- "CS repeat 2 [fd [-pi/n]] sPc [black]"
 cl_splited <-breakup_String(CodeLine)
 cl_splited
-```
 
-### Create Calls
 
-```{r}
+## ------------------------------------------------------------------------------------------------------------------------------------
 create_Calls <- function (splited) {
   Calls <- splited %>%
     group_by(ID_Func, ID_Par) %>%
@@ -557,16 +467,14 @@ create_Calls <- function (splited) {
   
   Calls
 }
-```
 
-```{r}
+
+## ------------------------------------------------------------------------------------------------------------------------------------
 Callshort <- create_Calls(cl_splited)
 Callshort 
-```
 
-### Expand Repeats
 
-```{r}
+## ------------------------------------------------------------------------------------------------------------------------------------
 
 expand_Repeats <- function (Calls) {
   IDmax <- max(Calls$ID)
@@ -605,16 +513,14 @@ expand_Repeats <- function (Calls) {
   }
   return(as.vector(Calls$Call[Calls$Call != ""]))
 }
-```
 
-```{r}
+
+## ------------------------------------------------------------------------------------------------------------------------------------
 Calls <- expand_Repeats(Callshort)
 Calls
-```
 
-### Run Calls
 
-```{r}
+## ------------------------------------------------------------------------------------------------------------------------------------
 run_prompt <- function (Prompt) {
   Prompt_splited <- breakup_String(Prompt)
   Callshort <- create_Calls(Prompt_splited)
@@ -623,15 +529,9 @@ run_prompt <- function (Prompt) {
     eval(parse(text = as.character(Calls[i])))
     }
 }
-```
 
-## Helper Functions
 
-### New field
-
-Initializing the game
-
-```{r}
+## ------------------------------------------------------------------------------------------------------------------------------------
 new_field <- function (size) {
   dir_path <- here("LOGO", "temp")
   chunk <- 1
@@ -664,11 +564,9 @@ new_field <- function (size) {
   LOGO$speed = speed
   LOGO$path = path
 }
-```
 
-### Record Path
 
-```{r}
+## ------------------------------------------------------------------------------------------------------------------------------------
  record_path <- function (chunk = NULL,
                           x = NULL, 
                           y = NULL, 
@@ -700,13 +598,9 @@ new_field <- function (size) {
    LOGO$path[new_pos,] <- newrows
    LOGO$pos <- nrow(LOGO$path)
 }
-```
 
-## Plot Functions
 
-### Field
-
-```{r}
+## ------------------------------------------------------------------------------------------------------------------------------------
 plot_field <- function (stat) {
   maxpath <- ceiling(max(abs(LOGO$path[1:stat,c("x","y")])) * 1.11)
   LOGO$size <- max(c(LOGO$size, maxpath), na.rm = TRUE)
@@ -719,11 +613,9 @@ plot_field <- function (stat) {
               asp = 1)
   box()
 }
-```
 
-### Path
 
-```{r}
+## ------------------------------------------------------------------------------------------------------------------------------------
 plot_path <- function (stat) {
   if (stat > 1) {
     path_stat <- LOGO$path[1:stat,]
@@ -735,11 +627,9 @@ plot_path <- function (stat) {
              lwd = 2)
   }
 }
-```
 
-### Turtle
 
-```{r}
+## ------------------------------------------------------------------------------------------------------------------------------------
 plot_turtle <- function (stat) {
   show <-  LOGO$path$turtle[stat]
   if (show) {
@@ -765,11 +655,9 @@ plot_turtle <- function (stat) {
            lwd = 2)
   }
 }
-```
 
-### Stat
 
-```{r}
+## ------------------------------------------------------------------------------------------------------------------------------------
 plot_stat <- function (stat = NULL) {
   if(is.null(stat)) stat <- nrow(LOGO$path)
   
@@ -788,11 +676,9 @@ plot_stat <- function (stat = NULL) {
   img
 
 }
-```
 
-### PLOT (Animation)
 
-```{r}
+## ------------------------------------------------------------------------------------------------------------------------------------
 PLOT <- function (chunk = TRUE) {
   invisible(NULL)
   
@@ -823,11 +709,9 @@ PLOT <- function (chunk = TRUE) {
   
   print(Logo_Output)
 }
-```
 
-## Application
 
-```{r}
+## ------------------------------------------------------------------------------------------------------------------------------------
 run_LOGO <- function(string) {
   if (!exists("LOGO", envir = .GlobalEnv)) {
     assign("LOGO", new.env(), envir = .GlobalEnv)
@@ -838,15 +722,9 @@ run_LOGO <- function(string) {
   }
   run_prompt(string)
 }
-```
 
-# Run Game
 
-## Example from the homepage
-
-with some fancy shadow and color effects
-
-```{r, results='hide', message=FALSE, warning=FALSE}
+## ----results='hide', message=FALSE, warning=FALSE------------------------------------------------------------------------------------
 run_LOGO("CS SP [-pi/5] [-Sin(PI/2)/2] sPc [black]")
 run_LOGO("REPEAT 20 [RepeaT 180 [FD 1 RT 2] RT 18]")
 run_LOGO("SPEED 100")
@@ -861,68 +739,39 @@ run_LOGO("SpC [yellow] rt 18")
 run_LOGO("REPEaT 5 [rEPEAT 180 [fD 1 RT 2] RT 72]")
 run_LOGO("SpC [red] rt 18 ht")
 run_LOGO("REPEaT 5 [rEPEAT 360 [fD 0.5 RT 1] RT 72]")
-```
 
-### Saved Output
 
-you can also save the output (Plot) for showing it around later
-
-```{r, results='hide', message=FALSE, warning=FALSE}
+## ----results='hide', message=FALSE, warning=FALSE------------------------------------------------------------------------------------
 run_LOGO("SPEED 1 saVe [Logo01]")
-```
 
-![](Logo01.gif)
 
-## Other Exercises
-
-Since `n` is also used as a loop variable in my program, handling many other exercises doesn't pose any issues.
-
-<https://softwareprogramming4kids.com/loops-in-logo/>
-
-### Exercise 1:
-
-```{r, results='hide', message=FALSE, warning=FALSE}
+## ----results='hide', message=FALSE, warning=FALSE------------------------------------------------------------------------------------
 run_LOGO("CS")
 run_LOGO("REPEAT 80 [FD [N*2] RT 90]")
 run_LOGO("undo")
 run_LOGO("REPEAT 80 [FD [N*2^(N/40)] RT 90]")
-```
 
 
-```{r, results='hide', message=FALSE, warning=FALSE}
+## ----results='hide', message=FALSE, warning=FALSE------------------------------------------------------------------------------------
 run_LOGO("SPEED 1 saVe [Logo02]")
-```
 
-![](Logo02.gif)
 
-### Exercise 2:
-
-```{r, results='hide', message=FALSE, warning=FALSE}
+## ----results='hide', message=FALSE, warning=FALSE------------------------------------------------------------------------------------
 run_LOGO("CS REPEAT 50 [ FD [n * 5]  RIGHT 144 ]")
-```
 
 
-```{r, results='hide', message=FALSE, warning=FALSE}
+## ----results='hide', message=FALSE, warning=FALSE------------------------------------------------------------------------------------
 run_LOGO("SPEED 1 saVe [Logo03]")
-```
 
-![](Logo03.gif)
 
-### Exercise 3:
-
-```{r, results='hide', message=FALSE, warning=FALSE}
+## ----results='hide', message=FALSE, warning=FALSE------------------------------------------------------------------------------------
 run_LOGO("CS REPEAT 150 [ FD [n * 2]  RT 91 ]")
-```
 
 
-```{r, results='hide', message=FALSE, warning=FALSE}
+## ----results='hide', message=FALSE, warning=FALSE------------------------------------------------------------------------------------
 run_LOGO("SPEED 1 saVe [Logo04]")
-```
 
-![](Logo04.gif)
 
-# Quit LOGO
-
-```{r, results='hide', message=FALSE, warning=FALSE}
+## ----results='hide', message=FALSE, warning=FALSE------------------------------------------------------------------------------------
 run_LOGO("QUIT")
-```
+
