@@ -211,20 +211,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#saved-output" id="toc-saved-output" class="nav-link" data-scroll-target="#saved-output">Saved Output</a></li>
   </ul></li>
-  </ul></li>
   <li><a href="#other-exercises" id="toc-other-exercises" class="nav-link" data-scroll-target="#other-exercises">Other Exercises</a>
   <ul class="collapse">
-  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1:</a>
-  <ul class="collapse">
-  <li><a href="#saved-output-1" id="toc-saved-output-1" class="nav-link" data-scroll-target="#saved-output-1">Saved Output</a></li>
-  </ul></li>
-  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2:</a>
-  <ul class="collapse">
-  <li><a href="#saved-output-2" id="toc-saved-output-2" class="nav-link" data-scroll-target="#saved-output-2">Saved Output</a></li>
-  </ul></li>
-  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3:</a>
-  <ul class="collapse">
-  <li><a href="#saved-output-3" id="toc-saved-output-3" class="nav-link" data-scroll-target="#saved-output-3">Saved Output</a></li>
+  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1:</a></li>
+  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2:</a></li>
+  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3:</a></li>
   </ul></li>
   </ul></li>
   <li><a href="#quit-logo" id="toc-quit-logo" class="nav-link" data-scroll-target="#quit-logo">Quit LOGO</a></li>
@@ -292,8 +283,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Don’t show the turtle cursor.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>HIDETURTLE <span class="ot">&lt;-</span> <span class="cf">function</span> () {</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>data<span class="sc">$</span>turtle <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">record_path</span>(<span class="at">turtle =</span> LOGO<span class="sc">$</span>data<span class="sc">$</span>turtle)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>turtle <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">record_path</span>(<span class="at">turtle =</span> LOGO<span class="sc">$</span>turtle)</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
@@ -307,8 +298,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Show the turtle cursor.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>SHOWTURTLE <span class="ot">&lt;-</span> <span class="cf">function</span> () {</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>data<span class="sc">$</span>turtle <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">record_path</span>(<span class="at">turtle =</span> LOGO<span class="sc">$</span>data<span class="sc">$</span>turtle)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>turtle <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">record_path</span>(<span class="at">turtle =</span> LOGO<span class="sc">$</span>turtle)</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
@@ -322,22 +313,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Move forward <em>steps</em>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>FORWARD <span class="ot">&lt;-</span> <span class="cf">function</span> (step) {</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  angle <span class="ot">&lt;-</span> LOGO<span class="sc">$</span>data<span class="sc">$</span>path<span class="sc">$</span>rad[LOGO<span class="sc">$</span>data<span class="sc">$</span>pos] </span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  x0 <span class="ot">&lt;-</span> LOGO<span class="sc">$</span>data<span class="sc">$</span>path<span class="sc">$</span>x[LOGO<span class="sc">$</span>data<span class="sc">$</span>pos]</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  y0 <span class="ot">&lt;-</span> LOGO<span class="sc">$</span>data<span class="sc">$</span>path<span class="sc">$</span>y[LOGO<span class="sc">$</span>data<span class="sc">$</span>pos]</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  angle <span class="ot">&lt;-</span> LOGO<span class="sc">$</span>path<span class="sc">$</span>rad[LOGO<span class="sc">$</span>pos] </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  x0 <span class="ot">&lt;-</span> LOGO<span class="sc">$</span>path<span class="sc">$</span>x[LOGO<span class="sc">$</span>pos]</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  y0 <span class="ot">&lt;-</span> LOGO<span class="sc">$</span>path<span class="sc">$</span>y[LOGO<span class="sc">$</span>pos]</span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  max_step <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  n_step <span class="ot">&lt;-</span> <span class="fu">abs</span>(step)<span class="sc">%/%</span>(max_step <span class="sc">*</span> <span class="fl">1.5</span>) <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  Seq0 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">1</span>, <span class="at">by =</span> <span class="dv">1</span><span class="sc">/</span>n_step)</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  Seq0 <span class="ot">&lt;-</span> Seq0[<span class="sc">-</span><span class="dv">1</span>]</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  steps <span class="ot">&lt;-</span> <span class="fu">qbeta</span>(Seq0, <span class="at">shape1 =</span> <span class="fl">0.15</span>, <span class="at">shape2 =</span> <span class="fl">0.2</span>)</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  steps <span class="ot">&lt;-</span> steps <span class="sc">*</span> step</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  x1 <span class="ot">&lt;-</span> x0 <span class="sc">+</span> <span class="fu">cos</span>(angle) <span class="sc">*</span> steps</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  y1 <span class="ot">&lt;-</span> y0 <span class="sc">+</span> <span class="fu">sin</span>(angle) <span class="sc">*</span> steps</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">record_path</span>(<span class="at">x =</span> x1, <span class="at">y =</span> y1, <span class="at">path_color =</span> LOGO<span class="sc">$</span>data<span class="sc">$</span>path_color)</span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (step <span class="sc">&gt;</span> max_step) {</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    n_step <span class="ot">&lt;-</span> <span class="fu">abs</span>(step)<span class="sc">%/%</span>(max_step <span class="sc">*</span> <span class="fl">1.5</span>) <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    Seq0 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">1</span>, <span class="at">by =</span> <span class="dv">1</span><span class="sc">/</span>n_step)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    Seq0 <span class="ot">&lt;-</span> Seq0[<span class="sc">-</span><span class="dv">1</span>]</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    steps <span class="ot">&lt;-</span> <span class="fu">qbeta</span>(Seq0, <span class="at">shape1 =</span> <span class="fl">0.15</span>, <span class="at">shape2 =</span> <span class="fl">0.2</span>)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    steps <span class="ot">&lt;-</span> steps <span class="sc">*</span> step</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    steps <span class="ot">&lt;-</span> step</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>  x1 <span class="ot">&lt;-</span> x0 <span class="sc">+</span> <span class="fu">cos</span>(angle) <span class="sc">*</span> steps</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>  y1 <span class="ot">&lt;-</span> y0 <span class="sc">+</span> <span class="fu">sin</span>(angle) <span class="sc">*</span> steps</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">record_path</span>(<span class="at">x =</span> x1, <span class="at">y =</span> y1, <span class="at">path_color =</span> LOGO<span class="sc">$</span>path_color)</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>FD <span class="ot">&lt;-</span> <span class="cf">function</span> (step) {</span>
@@ -364,9 +360,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Turn left this many degrees. Negative degrees work too, they’ll turn it right.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>LEFT <span class="ot">&lt;-</span> <span class="cf">function</span> (degs) {</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>data<span class="sc">$</span>heading <span class="ot">&lt;-</span> LOGO<span class="sc">$</span>data<span class="sc">$</span>heading <span class="sc">+</span> degs</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>data<span class="sc">$</span>heading <span class="ot">&lt;-</span> LOGO<span class="sc">$</span>data<span class="sc">$</span>heading <span class="sc">%%</span> <span class="dv">360</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">record_path</span>(<span class="at">rad =</span> LOGO<span class="sc">$</span>data<span class="sc">$</span>heading <span class="sc">*</span> pi <span class="sc">/</span> <span class="dv">180</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>heading <span class="ot">&lt;-</span> LOGO<span class="sc">$</span>heading <span class="sc">+</span> degs</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>heading <span class="ot">&lt;-</span> LOGO<span class="sc">$</span>heading <span class="sc">%%</span> <span class="dv">360</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">record_path</span>(<span class="at">rad =</span> LOGO<span class="sc">$</span>heading <span class="sc">*</span> pi <span class="sc">/</span> <span class="dv">180</span>)</span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
@@ -394,8 +390,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Turn to an absolute heading of <em>degrees</em>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>SETHEADING <span class="ot">&lt;-</span> <span class="cf">function</span> (deg) {</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>data<span class="sc">$</span>heading <span class="ot">&lt;-</span> deg</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">record_path</span>(<span class="at">rad =</span> LOGO<span class="sc">$</span>data<span class="sc">$</span>heading <span class="sc">*</span> pi <span class="sc">/</span> <span class="dv">180</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>heading <span class="ot">&lt;-</span> deg</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">record_path</span>(<span class="at">rad =</span> LOGO<span class="sc">$</span>heading <span class="sc">*</span> pi <span class="sc">/</span> <span class="dv">180</span>)</span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
@@ -432,7 +428,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Set the horizontal position to <em>x</em>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>SETPOSX <span class="ot">&lt;-</span> <span class="cf">function</span> (x1) {</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">SETPOS</span>(x1, <span class="at">y1 =</span> LOGO<span class="sc">$</span>data<span class="sc">$</span>path<span class="sc">$</span>y[LOGO<span class="sc">$</span>data<span class="sc">$</span>pos])</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">SETPOS</span>(x1, <span class="at">y1 =</span> LOGO<span class="sc">$</span>path<span class="sc">$</span>y[LOGO<span class="sc">$</span>pos])</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
@@ -446,7 +442,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Set the vertical position to <em>y</em>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>SETPOSY <span class="ot">&lt;-</span> <span class="cf">function</span> (y1) {</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">SETPOS</span>(<span class="at">x1 =</span> LOGO<span class="sc">$</span>data<span class="sc">$</span>path<span class="sc">$</span>x[LOGO<span class="sc">$</span>data<span class="sc">$</span>pos], y1)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">SETPOS</span>(<span class="at">x1 =</span> LOGO<span class="sc">$</span>path<span class="sc">$</span>x[LOGO<span class="sc">$</span>pos], y1)</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
@@ -462,8 +458,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="setpathcolor-spc">SETPATHCOLOR (SPC)</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>SETPATHCOLOR <span class="ot">&lt;-</span> <span class="cf">function</span> (path_color) {</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>data<span class="sc">$</span>path_color <span class="ot">&lt;-</span> path_color</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">record_path</span>(<span class="at">path_color =</span> LOGO<span class="sc">$</span>data<span class="sc">$</span>path_color)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>path_color <span class="ot">&lt;-</span> path_color</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">record_path</span>(<span class="at">path_color =</span> LOGO<span class="sc">$</span>path_color)</span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
@@ -476,8 +472,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="setturtlecolor-stc">SETTURTLECOLOR (STC)</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>SETTURTLECOLOR <span class="ot">&lt;-</span> <span class="cf">function</span> (turtle_color) {</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>data<span class="sc">$</span>turtle_color <span class="ot">&lt;-</span> turtle_color</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">record_path</span>(<span class="at">turtle_color =</span> LOGO<span class="sc">$</span>data<span class="sc">$</span>turtle_color)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>turtle_color <span class="ot">&lt;-</span> turtle_color</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">record_path</span>(<span class="at">turtle_color =</span> LOGO<span class="sc">$</span>turtle_color)</span>
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
@@ -490,8 +486,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="setnewchunk-snc">SETNEWCHUNK (SNC)</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>SETNEWCHUNK <span class="ot">&lt;-</span> <span class="cf">function</span> () {</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>data<span class="sc">$</span>chunk <span class="ot">&lt;-</span> LOGO<span class="sc">$</span>data<span class="sc">$</span>chunk <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">record_path</span>(<span class="at">chunk =</span> LOGO<span class="sc">$</span>data<span class="sc">$</span>chunk)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>chunk <span class="ot">&lt;-</span> LOGO<span class="sc">$</span>chunk <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">record_path</span>(<span class="at">chunk =</span> LOGO<span class="sc">$</span>chunk)</span>
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
@@ -504,27 +500,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="undochunk-undo">UNDOCHUNK (UNDO)</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>UNDOCHUNK <span class="ot">&lt;-</span> <span class="cf">function</span> () {</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  last_chunk <span class="ot">&lt;-</span> <span class="fu">max</span>(LOGO<span class="sc">$</span>data<span class="sc">$</span>path<span class="sc">$</span>chunk)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  last_chunk <span class="ot">&lt;-</span> <span class="fu">max</span>(LOGO<span class="sc">$</span>path<span class="sc">$</span>chunk)</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (last_chunk <span class="sc">&gt;</span> <span class="dv">1</span>) {</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    LOGO<span class="sc">$</span>data<span class="sc">$</span>path <span class="ot">&lt;-</span> LOGO<span class="sc">$</span>data<span class="sc">$</span>path[LOGO<span class="sc">$</span>data<span class="sc">$</span>path<span class="sc">$</span>chunk <span class="sc">!=</span> last_chunk,]</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    LOGO<span class="sc">$</span>path <span class="ot">&lt;-</span> LOGO<span class="sc">$</span>path[LOGO<span class="sc">$</span>path<span class="sc">$</span>chunk <span class="sc">!=</span> last_chunk,]</span>
 <span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
 <span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">CLEARSCREEN</span>() </span>
 <span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>data<span class="sc">$</span>chunk <span class="ot">&lt;-</span> <span class="fu">max</span>(LOGO<span class="sc">$</span>data<span class="sc">$</span>path<span class="sc">$</span>chunk)</span>
-<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>data<span class="sc">$</span>pos <span class="ot">&lt;-</span> <span class="fu">nrow</span>(LOGO<span class="sc">$</span>data<span class="sc">$</span>path)</span>
-<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>data<span class="sc">$</span>heading <span class="ot">&lt;-</span> LOGO<span class="sc">$</span>data<span class="sc">$</span>path<span class="sc">$</span>rad[LOGO<span class="sc">$</span>data<span class="sc">$</span>pos] <span class="sc">*</span> <span class="dv">180</span> <span class="sc">/</span> pi </span>
-<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>data<span class="sc">$</span>turtle <span class="ot">&lt;-</span> LOGO<span class="sc">$</span>data<span class="sc">$</span>path<span class="sc">$</span>turtle[LOGO<span class="sc">$</span>data<span class="sc">$</span>pos]</span>
-<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>data<span class="sc">$</span>turtle_color <span class="ot">&lt;-</span> LOGO<span class="sc">$</span>data<span class="sc">$</span>path<span class="sc">$</span>turtle_color[LOGO<span class="sc">$</span>data<span class="sc">$</span>pos]</span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>chunk <span class="ot">&lt;-</span> <span class="fu">max</span>(LOGO<span class="sc">$</span>path<span class="sc">$</span>chunk)</span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>pos <span class="ot">&lt;-</span> <span class="fu">nrow</span>(LOGO<span class="sc">$</span>path)</span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>heading <span class="ot">&lt;-</span> LOGO<span class="sc">$</span>path<span class="sc">$</span>rad[LOGO<span class="sc">$</span>pos] <span class="sc">*</span> <span class="dv">180</span> <span class="sc">/</span> pi </span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>turtle <span class="ot">&lt;-</span> LOGO<span class="sc">$</span>path<span class="sc">$</span>turtle[LOGO<span class="sc">$</span>pos]</span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>turtle_color <span class="ot">&lt;-</span> LOGO<span class="sc">$</span>path<span class="sc">$</span>turtle_color[LOGO<span class="sc">$</span>pos]</span>
 <span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a>  last_pos <span class="ot">&lt;-</span> LOGO<span class="sc">$</span>data<span class="sc">$</span>pos</span>
-<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> (LOGO<span class="sc">$</span>data<span class="sc">$</span>path<span class="sc">$</span>path_color[last_pos] <span class="sc">==</span> <span class="st">"transparent"</span> <span class="sc">&amp;&amp;</span> last_pos <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a>  last_pos <span class="ot">&lt;-</span> LOGO<span class="sc">$</span>pos</span>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> (LOGO<span class="sc">$</span>path<span class="sc">$</span>path_color[last_pos] <span class="sc">==</span> <span class="st">"transparent"</span> <span class="sc">&amp;&amp;</span> last_pos <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
 <span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a>    last_pos <span class="ot">&lt;-</span> last_pos <span class="sc">-</span> <span class="dv">1</span></span>
 <span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (last_pos <span class="sc">==</span> <span class="dv">0</span>) {</span>
-<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a>    LOGO<span class="sc">$</span>data<span class="sc">$</span>path_color <span class="ot">&lt;-</span> <span class="st">"blue"</span></span>
+<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a>    LOGO<span class="sc">$</span>path_color <span class="ot">&lt;-</span> <span class="st">"blue"</span></span>
 <span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a>    LOGO<span class="sc">$</span>data<span class="sc">$</span>path_color <span class="ot">&lt;-</span> LOGO<span class="sc">$</span>data<span class="sc">$</span>path<span class="sc">$</span>path_color[last_pos]</span>
+<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a>    LOGO<span class="sc">$</span>path_color <span class="ot">&lt;-</span> LOGO<span class="sc">$</span>path<span class="sc">$</span>path_color[last_pos]</span>
 <span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb30-24"><a href="#cb30-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">REPLOT</span>()</span>
 <span id="cb30-25"><a href="#cb30-25" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -541,7 +537,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>SETSPEED <span class="ot">&lt;-</span> <span class="cf">function</span> (speed) {</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  speed <span class="ot">&lt;-</span> <span class="fu">pmax</span>(speed, <span class="dv">1</span>)</span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  speed <span class="ot">&lt;-</span> <span class="fu">round</span>(speed)</span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>data<span class="sc">$</span>speed <span class="ot">&lt;-</span> speed</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>speed <span class="ot">&lt;-</span> speed</span>
 <span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
@@ -891,20 +887,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb50-18"><a href="#cb50-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span></span>
 <span id="cb50-19"><a href="#cb50-19" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb50-20"><a href="#cb50-20" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb50-21"><a href="#cb50-21" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>data <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb50-22"><a href="#cb50-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">field_name =</span> <span class="st">"LOGO"</span>,</span>
-<span id="cb50-23"><a href="#cb50-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">field_dir =</span> <span class="fu">here</span>(),</span>
-<span id="cb50-24"><a href="#cb50-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="fu">abs</span>(size),</span>
-<span id="cb50-25"><a href="#cb50-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">chunk =</span> chunk,</span>
-<span id="cb50-26"><a href="#cb50-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">pos =</span> pos,</span>
-<span id="cb50-27"><a href="#cb50-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">heading =</span> heading,</span>
-<span id="cb50-28"><a href="#cb50-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">turtle =</span> turtle,</span>
-<span id="cb50-29"><a href="#cb50-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">turtle_color =</span> turtle_color,</span>
-<span id="cb50-30"><a href="#cb50-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">path_color =</span> path_color,</span>
-<span id="cb50-31"><a href="#cb50-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">speed =</span> speed,</span>
-<span id="cb50-32"><a href="#cb50-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">path =</span> path</span>
-<span id="cb50-33"><a href="#cb50-33" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb50-34"><a href="#cb50-34" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb50-21"><a href="#cb50-21" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>field_name <span class="ot">=</span> <span class="st">"LOGO"</span></span>
+<span id="cb50-22"><a href="#cb50-22" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>field_dir <span class="ot">=</span> <span class="fu">here</span>()</span>
+<span id="cb50-23"><a href="#cb50-23" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>size <span class="ot">=</span> <span class="fu">abs</span>(size)</span>
+<span id="cb50-24"><a href="#cb50-24" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>chunk <span class="ot">=</span> chunk</span>
+<span id="cb50-25"><a href="#cb50-25" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>pos <span class="ot">=</span> pos</span>
+<span id="cb50-26"><a href="#cb50-26" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>heading <span class="ot">=</span> heading</span>
+<span id="cb50-27"><a href="#cb50-27" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>turtle <span class="ot">=</span> turtle</span>
+<span id="cb50-28"><a href="#cb50-28" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>turtle_color <span class="ot">=</span> turtle_color</span>
+<span id="cb50-29"><a href="#cb50-29" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>path_color <span class="ot">=</span> path_color</span>
+<span id="cb50-30"><a href="#cb50-30" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>speed <span class="ot">=</span> speed</span>
+<span id="cb50-31"><a href="#cb50-31" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>path <span class="ot">=</span> path</span>
+<span id="cb50-32"><a href="#cb50-32" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="record-path" class="level3">
@@ -918,24 +912,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>                          <span class="at">turtle =</span> <span class="cn">NULL</span>,</span>
 <span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>                          <span class="at">turtle_color =</span> <span class="cn">NULL</span>) {</span>
 <span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a>   </span>
-<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>   temp <span class="ot">&lt;-</span> LOGO<span class="sc">$</span>data<span class="sc">$</span>pos</span>
-<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a>   n <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="fu">lengths</span>(<span class="fu">list</span>(chunk, x, y, rad, path_color, turtle, turtle_color)))</span>
+<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>   n <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="fu">length</span>(x),<span class="dv">1</span>)</span>
+<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a>   template <span class="ot">&lt;-</span> LOGO<span class="sc">$</span>path[LOGO<span class="sc">$</span>pos, ]</span>
 <span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a>   </span>
-<span id="cb51-12"><a href="#cb51-12" aria-hidden="true" tabindex="-1"></a>   template <span class="ot">&lt;-</span> LOGO<span class="sc">$</span>data<span class="sc">$</span>path[temp, ]</span>
-<span id="cb51-13"><a href="#cb51-13" aria-hidden="true" tabindex="-1"></a>   newrows <span class="ot">&lt;-</span> template[<span class="fu">rep</span>(<span class="dv">1</span>, n), ]</span>
-<span id="cb51-14"><a href="#cb51-14" aria-hidden="true" tabindex="-1"></a>   </span>
-<span id="cb51-15"><a href="#cb51-15" aria-hidden="true" tabindex="-1"></a>   <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(chunk)) newrows<span class="sc">$</span>chunk <span class="ot">&lt;-</span> chunk</span>
-<span id="cb51-16"><a href="#cb51-16" aria-hidden="true" tabindex="-1"></a>   <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(x)) newrows<span class="sc">$</span>x <span class="ot">&lt;-</span> x</span>
-<span id="cb51-17"><a href="#cb51-17" aria-hidden="true" tabindex="-1"></a>   <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(y)) newrows<span class="sc">$</span>y <span class="ot">&lt;-</span> y</span>
-<span id="cb51-18"><a href="#cb51-18" aria-hidden="true" tabindex="-1"></a>   <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(rad)) newrows<span class="sc">$</span>rad <span class="ot">&lt;-</span> rad</span>
-<span id="cb51-19"><a href="#cb51-19" aria-hidden="true" tabindex="-1"></a>   <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(path_color)) newrows<span class="sc">$</span>path_color <span class="ot">&lt;-</span> path_color</span>
-<span id="cb51-20"><a href="#cb51-20" aria-hidden="true" tabindex="-1"></a>   <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(turtle)) newrows<span class="sc">$</span>turtle <span class="ot">&lt;-</span> turtle</span>
-<span id="cb51-21"><a href="#cb51-21" aria-hidden="true" tabindex="-1"></a>   <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(turtle_color)) newrows<span class="sc">$</span>turtle_color <span class="ot">&lt;-</span> turtle_color</span>
-<span id="cb51-22"><a href="#cb51-22" aria-hidden="true" tabindex="-1"></a>   </span>
-<span id="cb51-23"><a href="#cb51-23" aria-hidden="true" tabindex="-1"></a>   LOGO<span class="sc">$</span>data<span class="sc">$</span>path <span class="ot">&lt;-</span> <span class="fu">rbind</span>(LOGO<span class="sc">$</span>data<span class="sc">$</span>path, newrows)</span>
-<span id="cb51-24"><a href="#cb51-24" aria-hidden="true" tabindex="-1"></a>   <span class="fu">rownames</span>(LOGO<span class="sc">$</span>data<span class="sc">$</span>path) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
-<span id="cb51-25"><a href="#cb51-25" aria-hidden="true" tabindex="-1"></a>   LOGO<span class="sc">$</span>data<span class="sc">$</span>pos <span class="ot">&lt;-</span> <span class="fu">nrow</span>(LOGO<span class="sc">$</span>data<span class="sc">$</span>path)</span>
-<span id="cb51-26"><a href="#cb51-26" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb51-12"><a href="#cb51-12" aria-hidden="true" tabindex="-1"></a>   <span class="cf">if</span> (n <span class="sc">&gt;</span> <span class="dv">1</span>) {</span>
+<span id="cb51-13"><a href="#cb51-13" aria-hidden="true" tabindex="-1"></a>     newrows <span class="ot">&lt;-</span> template[<span class="fu">rep</span>(<span class="dv">1</span>,n), ]</span>
+<span id="cb51-14"><a href="#cb51-14" aria-hidden="true" tabindex="-1"></a>     new_pos <span class="ot">&lt;-</span> LOGO<span class="sc">$</span>pos <span class="sc">+</span> (<span class="dv">1</span><span class="sc">:</span>n)</span>
+<span id="cb51-15"><a href="#cb51-15" aria-hidden="true" tabindex="-1"></a>   } <span class="cf">else</span> {</span>
+<span id="cb51-16"><a href="#cb51-16" aria-hidden="true" tabindex="-1"></a>     newrows <span class="ot">&lt;-</span> template</span>
+<span id="cb51-17"><a href="#cb51-17" aria-hidden="true" tabindex="-1"></a>     new_pos <span class="ot">&lt;-</span> LOGO<span class="sc">$</span>pos <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb51-18"><a href="#cb51-18" aria-hidden="true" tabindex="-1"></a>   }</span>
+<span id="cb51-19"><a href="#cb51-19" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb51-20"><a href="#cb51-20" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb51-21"><a href="#cb51-21" aria-hidden="true" tabindex="-1"></a>   <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(chunk)) newrows<span class="sc">$</span>chunk <span class="ot">&lt;-</span> chunk</span>
+<span id="cb51-22"><a href="#cb51-22" aria-hidden="true" tabindex="-1"></a>   <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(x)) newrows<span class="sc">$</span>x <span class="ot">&lt;-</span> x</span>
+<span id="cb51-23"><a href="#cb51-23" aria-hidden="true" tabindex="-1"></a>   <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(y)) newrows<span class="sc">$</span>y <span class="ot">&lt;-</span> y</span>
+<span id="cb51-24"><a href="#cb51-24" aria-hidden="true" tabindex="-1"></a>   <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(rad)) newrows<span class="sc">$</span>rad <span class="ot">&lt;-</span> rad</span>
+<span id="cb51-25"><a href="#cb51-25" aria-hidden="true" tabindex="-1"></a>   <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(path_color)) newrows<span class="sc">$</span>path_color <span class="ot">&lt;-</span> path_color</span>
+<span id="cb51-26"><a href="#cb51-26" aria-hidden="true" tabindex="-1"></a>   <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(turtle)) newrows<span class="sc">$</span>turtle <span class="ot">&lt;-</span> turtle</span>
+<span id="cb51-27"><a href="#cb51-27" aria-hidden="true" tabindex="-1"></a>   <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(turtle_color)) newrows<span class="sc">$</span>turtle_color <span class="ot">&lt;-</span> turtle_color</span>
+<span id="cb51-28"><a href="#cb51-28" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb51-29"><a href="#cb51-29" aria-hidden="true" tabindex="-1"></a>   LOGO<span class="sc">$</span>path[new_pos,] <span class="ot">&lt;-</span> newrows</span>
+<span id="cb51-30"><a href="#cb51-30" aria-hidden="true" tabindex="-1"></a>   LOGO<span class="sc">$</span>pos <span class="ot">&lt;-</span> <span class="fu">nrow</span>(LOGO<span class="sc">$</span>path)</span>
+<span id="cb51-31"><a href="#cb51-31" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
@@ -945,14 +944,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="field">Field</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>plot_field <span class="ot">&lt;-</span> <span class="cf">function</span> (stat) {</span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>  maxpath <span class="ot">&lt;-</span> <span class="fu">ceiling</span>(<span class="fu">max</span>(<span class="fu">abs</span>(LOGO<span class="sc">$</span>data<span class="sc">$</span>path[<span class="dv">1</span><span class="sc">:</span>stat,<span class="fu">c</span>(<span class="st">"x"</span>,<span class="st">"y"</span>)])) <span class="sc">*</span> <span class="fl">1.11</span>)</span>
-<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>data<span class="sc">$</span>size <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="fu">c</span>(LOGO<span class="sc">$</span>data<span class="sc">$</span>size, maxpath), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>  maxpath <span class="ot">&lt;-</span> <span class="fu">ceiling</span>(<span class="fu">max</span>(<span class="fu">abs</span>(LOGO<span class="sc">$</span>path[<span class="dv">1</span><span class="sc">:</span>stat,<span class="fu">c</span>(<span class="st">"x"</span>,<span class="st">"y"</span>)])) <span class="sc">*</span> <span class="fl">1.11</span>)</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>  LOGO<span class="sc">$</span>size <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="fu">c</span>(LOGO<span class="sc">$</span>size, maxpath), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>),</span>
 <span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">xaxs =</span> <span class="st">"i"</span>, <span class="at">yaxs =</span> <span class="st">"i"</span>)</span>
 <span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot.new</span>()</span>
-<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot.window</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span>LOGO<span class="sc">$</span>data<span class="sc">$</span>size, LOGO<span class="sc">$</span>data<span class="sc">$</span>size),</span>
-<span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a>              <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span>LOGO<span class="sc">$</span>data<span class="sc">$</span>size, LOGO<span class="sc">$</span>data<span class="sc">$</span>size),</span>
+<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot.window</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span>LOGO<span class="sc">$</span>size, LOGO<span class="sc">$</span>size),</span>
+<span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a>              <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span>LOGO<span class="sc">$</span>size, LOGO<span class="sc">$</span>size),</span>
 <span id="cb52-10"><a href="#cb52-10" aria-hidden="true" tabindex="-1"></a>              <span class="at">asp =</span> <span class="dv">1</span>)</span>
 <span id="cb52-11"><a href="#cb52-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">box</span>()</span>
 <span id="cb52-12"><a href="#cb52-12" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -963,48 +962,52 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>plot_path <span class="ot">&lt;-</span> <span class="cf">function</span> (stat) {</span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (stat <span class="sc">&gt;</span> <span class="dv">1</span>) {</span>
-<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>     <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>stat) {</span>
-<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">segments</span>(<span class="at">x0 =</span> LOGO<span class="sc">$</span>data<span class="sc">$</span>path<span class="sc">$</span>x[i<span class="dv">-1</span>], <span class="at">y0 =</span> LOGO<span class="sc">$</span>data<span class="sc">$</span>path<span class="sc">$</span>y[i<span class="dv">-1</span>],</span>
-<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">x1 =</span> LOGO<span class="sc">$</span>data<span class="sc">$</span>path<span class="sc">$</span>x[i], <span class="at">y1 =</span> LOGO<span class="sc">$</span>data<span class="sc">$</span>path<span class="sc">$</span>y[i],</span>
-<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">col =</span> LOGO<span class="sc">$</span>data<span class="sc">$</span>path<span class="sc">$</span>path_color[i], <span class="at">lwd =</span> <span class="dv">2</span>)</span>
-<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>     }</span>
-<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>    path_stat <span class="ot">&lt;-</span> LOGO<span class="sc">$</span>path[<span class="dv">1</span><span class="sc">:</span>stat,]</span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">segments</span>(<span class="at">x0 =</span> path_stat<span class="sc">$</span>x[<span class="sc">-</span>stat], </span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">y0 =</span> path_stat<span class="sc">$</span>y[<span class="sc">-</span>stat],</span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">x1 =</span> path_stat<span class="sc">$</span>x[<span class="sc">-</span><span class="dv">1</span>], </span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">y1 =</span> path_stat<span class="sc">$</span>y[<span class="sc">-</span><span class="dv">1</span>],</span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">col =</span> path_stat<span class="sc">$</span>path_color[<span class="sc">-</span><span class="dv">1</span>], </span>
+<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="turtle" class="level3">
 <h3 class="anchored" data-anchor-id="turtle">Turtle</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>plot_turtle <span class="ot">&lt;-</span> <span class="cf">function</span> (stat) {</span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>  show <span class="ot">&lt;-</span>  LOGO<span class="sc">$</span>data<span class="sc">$</span>path<span class="sc">$</span>turtle[stat]</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>  show <span class="ot">&lt;-</span>  LOGO<span class="sc">$</span>path<span class="sc">$</span>turtle[stat]</span>
 <span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (show) {</span>
-<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">symbols</span>(<span class="at">x =</span> LOGO<span class="sc">$</span>data<span class="sc">$</span>path<span class="sc">$</span>x[stat],</span>
-<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">y =</span> LOGO<span class="sc">$</span>data<span class="sc">$</span>path<span class="sc">$</span>y[stat],</span>
-<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">circles =</span> <span class="fl">0.02</span> <span class="sc">*</span> LOGO<span class="sc">$</span>data<span class="sc">$</span>size,</span>
-<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">inches =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">fg =</span> <span class="cn">NA</span>,</span>
-<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">bg =</span> LOGO<span class="sc">$</span>data<span class="sc">$</span>path<span class="sc">$</span>turtle_color[stat],</span>
-<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">add =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb54-11"><a href="#cb54-11" aria-hidden="true" tabindex="-1"></a>    arrow_length <span class="ot">&lt;-</span> <span class="fl">0.1</span> <span class="sc">*</span> LOGO<span class="sc">$</span>data<span class="sc">$</span>size</span>
-<span id="cb54-12"><a href="#cb54-12" aria-hidden="true" tabindex="-1"></a>    angle <span class="ot">&lt;-</span> LOGO<span class="sc">$</span>data<span class="sc">$</span>path<span class="sc">$</span>rad[stat]</span>
-<span id="cb54-13"><a href="#cb54-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrows</span>(LOGO<span class="sc">$</span>data<span class="sc">$</span>path<span class="sc">$</span>x[stat],</span>
-<span id="cb54-14"><a href="#cb54-14" aria-hidden="true" tabindex="-1"></a>           LOGO<span class="sc">$</span>data<span class="sc">$</span>path<span class="sc">$</span>y[stat],</span>
-<span id="cb54-15"><a href="#cb54-15" aria-hidden="true" tabindex="-1"></a>           LOGO<span class="sc">$</span>data<span class="sc">$</span>path<span class="sc">$</span>x[stat] <span class="sc">+</span> <span class="fu">cos</span>(angle) <span class="sc">*</span> arrow_length,</span>
-<span id="cb54-16"><a href="#cb54-16" aria-hidden="true" tabindex="-1"></a>           LOGO<span class="sc">$</span>data<span class="sc">$</span>path<span class="sc">$</span>y[stat] <span class="sc">+</span> <span class="fu">sin</span>(angle) <span class="sc">*</span> arrow_length,</span>
-<span id="cb54-17"><a href="#cb54-17" aria-hidden="true" tabindex="-1"></a>           <span class="at">col =</span> LOGO<span class="sc">$</span>data<span class="sc">$</span>path<span class="sc">$</span>turtle_color[stat],</span>
-<span id="cb54-18"><a href="#cb54-18" aria-hidden="true" tabindex="-1"></a>           <span class="at">code =</span> <span class="dv">2</span>,</span>
-<span id="cb54-19"><a href="#cb54-19" aria-hidden="true" tabindex="-1"></a>           <span class="at">length =</span> <span class="fl">0.1</span>,</span>
-<span id="cb54-20"><a href="#cb54-20" aria-hidden="true" tabindex="-1"></a>           <span class="at">angle =</span> <span class="dv">20</span>,</span>
-<span id="cb54-21"><a href="#cb54-21" aria-hidden="true" tabindex="-1"></a>           <span class="at">lwd =</span> <span class="dv">2</span>)</span>
-<span id="cb54-22"><a href="#cb54-22" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb54-23"><a href="#cb54-23" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>    pos_x <span class="ot">&lt;-</span> LOGO<span class="sc">$</span>path<span class="sc">$</span>x[stat]</span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>    pos_y <span class="ot">&lt;-</span> LOGO<span class="sc">$</span>path<span class="sc">$</span>y[stat]</span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">symbols</span>(<span class="at">x =</span> pos_x,</span>
+<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">y =</span> pos_y,</span>
+<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">circles =</span> <span class="fl">0.02</span> <span class="sc">*</span> LOGO<span class="sc">$</span>size,</span>
+<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">inches =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">fg =</span> <span class="cn">NA</span>,</span>
+<span id="cb54-11"><a href="#cb54-11" aria-hidden="true" tabindex="-1"></a>            <span class="at">bg =</span> LOGO<span class="sc">$</span>path<span class="sc">$</span>turtle_color[stat],</span>
+<span id="cb54-12"><a href="#cb54-12" aria-hidden="true" tabindex="-1"></a>            <span class="at">add =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb54-13"><a href="#cb54-13" aria-hidden="true" tabindex="-1"></a>    arrow_length <span class="ot">&lt;-</span> <span class="fl">0.1</span> <span class="sc">*</span> LOGO<span class="sc">$</span>size</span>
+<span id="cb54-14"><a href="#cb54-14" aria-hidden="true" tabindex="-1"></a>    angle <span class="ot">&lt;-</span> LOGO<span class="sc">$</span>path<span class="sc">$</span>rad[stat]</span>
+<span id="cb54-15"><a href="#cb54-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrows</span>(pos_x,</span>
+<span id="cb54-16"><a href="#cb54-16" aria-hidden="true" tabindex="-1"></a>           pos_y,</span>
+<span id="cb54-17"><a href="#cb54-17" aria-hidden="true" tabindex="-1"></a>           pos_x <span class="sc">+</span> <span class="fu">cos</span>(angle) <span class="sc">*</span> arrow_length,</span>
+<span id="cb54-18"><a href="#cb54-18" aria-hidden="true" tabindex="-1"></a>           pos_y <span class="sc">+</span> <span class="fu">sin</span>(angle) <span class="sc">*</span> arrow_length,</span>
+<span id="cb54-19"><a href="#cb54-19" aria-hidden="true" tabindex="-1"></a>           <span class="at">col =</span> LOGO<span class="sc">$</span>path<span class="sc">$</span>turtle_color[stat],</span>
+<span id="cb54-20"><a href="#cb54-20" aria-hidden="true" tabindex="-1"></a>           <span class="at">code =</span> <span class="dv">2</span>,</span>
+<span id="cb54-21"><a href="#cb54-21" aria-hidden="true" tabindex="-1"></a>           <span class="at">length =</span> <span class="fl">0.1</span>,</span>
+<span id="cb54-22"><a href="#cb54-22" aria-hidden="true" tabindex="-1"></a>           <span class="at">angle =</span> <span class="dv">20</span>,</span>
+<span id="cb54-23"><a href="#cb54-23" aria-hidden="true" tabindex="-1"></a>           <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb54-24"><a href="#cb54-24" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb54-25"><a href="#cb54-25" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="stat" class="level3">
 <h3 class="anchored" data-anchor-id="stat">Stat</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>plot_stat <span class="ot">&lt;-</span> <span class="cf">function</span> (<span class="at">stat =</span> <span class="cn">NULL</span>) {</span>
-<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">is.null</span>(stat)) stat <span class="ot">&lt;-</span> <span class="fu">nrow</span>(LOGO<span class="sc">$</span>data<span class="sc">$</span>path)</span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">is.null</span>(stat)) stat <span class="ot">&lt;-</span> <span class="fu">nrow</span>(LOGO<span class="sc">$</span>path)</span>
 <span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>  tmpfile <span class="ot">&lt;-</span> <span class="fu">tempfile</span>(<span class="at">fileext =</span> <span class="st">".png"</span>)</span>
 <span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">png</span>(<span class="at">filename =</span> tmpfile, <span class="at">width =</span> <span class="dv">600</span>, <span class="at">height =</span> <span class="dv">600</span>, <span class="at">res =</span> <span class="dv">150</span>)</span>
@@ -1030,15 +1033,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">invisible</span>(<span class="cn">NULL</span>)</span>
 <span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (chunk) {</span>
-<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>    Range <span class="ot">&lt;-</span> <span class="fu">range</span>(<span class="fu">which</span>(LOGO<span class="sc">$</span>data<span class="sc">$</span>path<span class="sc">$</span>chunk <span class="sc">==</span> <span class="fu">max</span>(LOGO<span class="sc">$</span>data<span class="sc">$</span>chunk)))</span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>    Range <span class="ot">&lt;-</span> <span class="fu">range</span>(<span class="fu">which</span>(LOGO<span class="sc">$</span>path<span class="sc">$</span>chunk <span class="sc">==</span> <span class="fu">max</span>(LOGO<span class="sc">$</span>chunk)))</span>
 <span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>    rmin <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="dv">2</span>,Range[<span class="dv">1</span>])</span>
 <span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a>    rmax <span class="ot">&lt;-</span> Range[<span class="dv">2</span>]</span>
 <span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
 <span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a>      rmin <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb56-10"><a href="#cb56-10" aria-hidden="true" tabindex="-1"></a>      rmax <span class="ot">&lt;-</span> <span class="fu">nrow</span>(LOGO<span class="sc">$</span>data<span class="sc">$</span>path)</span>
+<span id="cb56-10"><a href="#cb56-10" aria-hidden="true" tabindex="-1"></a>      rmax <span class="ot">&lt;-</span> <span class="fu">nrow</span>(LOGO<span class="sc">$</span>path)</span>
 <span id="cb56-11"><a href="#cb56-11" aria-hidden="true" tabindex="-1"></a>    }</span>
 <span id="cb56-12"><a href="#cb56-12" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb56-13"><a href="#cb56-13" aria-hidden="true" tabindex="-1"></a>  step <span class="ot">&lt;-</span> LOGO<span class="sc">$</span>data<span class="sc">$</span>speed<span class="sc">/</span>(rmax<span class="sc">-</span>rmin)</span>
+<span id="cb56-13"><a href="#cb56-13" aria-hidden="true" tabindex="-1"></a>  step <span class="ot">&lt;-</span> LOGO<span class="sc">$</span>speed<span class="sc">/</span>(rmax<span class="sc">-</span>rmin)</span>
 <span id="cb56-14"><a href="#cb56-14" aria-hidden="true" tabindex="-1"></a>  step <span class="ot">&lt;-</span> <span class="fu">pmin</span>(<span class="fu">pmax</span>(step, <span class="dv">1</span><span class="sc">/</span><span class="dv">200</span>), <span class="dv">1</span>)</span>
 <span id="cb56-15"><a href="#cb56-15" aria-hidden="true" tabindex="-1"></a>  Seq0 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">1</span>, <span class="at">by =</span> step)</span>
 <span id="cb56-16"><a href="#cb56-16" aria-hidden="true" tabindex="-1"></a>  plot_seq <span class="ot">&lt;-</span> <span class="fu">qbeta</span>(Seq0, <span class="at">shape1 =</span> <span class="fl">0.15</span>, <span class="at">shape2 =</span> <span class="fl">0.2</span>)</span>
@@ -1105,47 +1108,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="Logo01.gif" class="img-fluid"></p>
 </section>
 </section>
-</section>
-<section id="other-exercises" class="level1">
-<h1>Other Exercises</h1>
+<section id="other-exercises" class="level2">
+<h2 class="anchored" data-anchor-id="other-exercises">Other Exercises</h2>
 <p>Since <code>n</code> is also used as a loop variable in my program, handling many other exercises doesn’t pose any issues.</p>
 <p><a href="https://softwareprogramming4kids.com/loops-in-logo/" class="uri">https://softwareprogramming4kids.com/loops-in-logo/</a></p>
-<section id="exercise-1" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-1">Exercise 1:</h2>
+<section id="exercise-1" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-1">Exercise 1:</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">run_LOGO</span>(<span class="st">"CS"</span>)</span>
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="fu">run_LOGO</span>(<span class="st">"REPEAT 80 [FD [N*2] RT 90]"</span>)</span>
 <span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a><span class="fu">run_LOGO</span>(<span class="st">"undo"</span>)</span>
 <span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a><span class="fu">run_LOGO</span>(<span class="st">"REPEAT 80 [FD [N*2^(N/40)] RT 90]"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="saved-output-1" class="level3">
-<h3 class="anchored" data-anchor-id="saved-output-1">Saved Output</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">run_LOGO</span>(<span class="st">"SPEED 1 saVe [Logo02]"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><img src="Logo02.gif" class="img-fluid"></p>
 </section>
-</section>
-<section id="exercise-2" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-2">Exercise 2:</h2>
+<section id="exercise-2" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-2">Exercise 2:</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">run_LOGO</span>(<span class="st">"CS REPEAT 50 [ FD [n * 5]  RIGHT 144 ]"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="saved-output-2" class="level3">
-<h3 class="anchored" data-anchor-id="saved-output-2">Saved Output</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">run_LOGO</span>(<span class="st">"SPEED 1 saVe [Logo03]"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><img src="Logo03.gif" class="img-fluid"></p>
 </section>
-</section>
-<section id="exercise-3" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-3">Exercise 3:</h2>
+<section id="exercise-3" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-3">Exercise 3:</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">run_LOGO</span>(<span class="st">"CS REPEAT 150 [ FD [n * 2]  RT 91 ]"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="saved-output-3" class="level3">
-<h3 class="anchored" data-anchor-id="saved-output-3">Saved Output</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">run_LOGO</span>(<span class="st">"SPEED 1 saVe [Logo04]"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>

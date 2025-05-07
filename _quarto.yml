@@ -24,4 +24,4 @@ format:
     highlight-style: monokai
 
 execute: 
-  freeze: true
+  freeze: false
