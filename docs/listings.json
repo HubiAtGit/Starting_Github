@@ -1,0 +1,16 @@
+[
+  {
+    "listing": "/LOGO.html",
+    "items": [
+      "/LOGO/LOGO_Hubi.html"
+    ]
+  },
+  {
+    "listing": "/Classmates.html",
+    "items": [
+      "/Classmates/template.html",
+      "/Classmates/HubiAtGit.html",
+      "/Classmates/chiaraschmidiger.html"
+    ]
+  }
+]
