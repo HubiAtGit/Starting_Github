@@ -82,7 +82,7 @@ FORWARD <- function (step) {
   x0 <- LOGO$path$x[LOGO$pos]
   y0 <- LOGO$path$y[LOGO$pos]
   
-  max_step <- 1.5
+  max_step <- 1
   
   if (step > max_step) {
     n_step <- abs(step)%/%(max_step * 1.5) + 1
